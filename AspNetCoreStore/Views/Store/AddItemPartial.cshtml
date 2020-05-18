@@ -1,0 +1,9 @@
+﻿@model StoreItem
+    <form asp-action="AddItem" method="POST">
+        <p>Add a new item:</p>
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description">
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price">
+        <button type="submit">Add</button>
+    </form>
