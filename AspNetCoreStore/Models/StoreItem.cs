@@ -12,5 +12,7 @@ namespace AspNetCoreStore.Models
         [Required]
         public string Description { get; set; }
         public decimal? Price { get; set; }
+        public bool InCart { get; set; }
+        public int Quantity { get; set; }
     }
 }

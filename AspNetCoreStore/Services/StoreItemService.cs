@@ -26,6 +26,8 @@ namespace AspNetCoreStore.Services
         {
             newItem.Id = Guid.NewGuid();
             //‘Set any other properties of newItem as required’;
+            newItem.InCart = false;
+            newItem.Quantity = 1;
             _context.Items.Add(newItem);
             var saveResult = await _context.SaveChangesAsync();
             return saveResult == 1;
