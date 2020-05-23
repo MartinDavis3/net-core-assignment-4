@@ -19,7 +19,7 @@ namespace AspNetCoreStore.Controllers
         public async Task<IActionResult> Index()
         {
             var items = await _storeItemService.GetAllItemsAsync();
-             var model = new StoreViewModel()
+            var model = new StoreViewModel()
             {
                 Items = items
             };

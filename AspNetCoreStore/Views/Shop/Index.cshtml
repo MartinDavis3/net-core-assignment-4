@@ -1,0 +1,31 @@
+﻿@model StoreViewModel
+@{
+    ViewData["Title"] = "Shop Items";
+}
+<div class="panel panel-default store-items-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+       @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>
+                    <form asp-action="AddItemToCart" method="POST">
+                        <button class="add-item-to-cart-button" type="submit" />
+                        <input type="hidden" name="id" value="@item.Id" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="panel-footer cart-items-panel">
+        @await Html.PartialAsync("CartPartial")
+    </div>
+</div>

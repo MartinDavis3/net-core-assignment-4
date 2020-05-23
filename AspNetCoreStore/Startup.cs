@@ -38,6 +38,7 @@ namespace AspNetCoreStore
 
             services.AddMvc();
             services.AddScoped<IStoreItemService, StoreItemService>();
+            services.AddScoped<IShopItemService, ShopItemService>();
 
         }
 

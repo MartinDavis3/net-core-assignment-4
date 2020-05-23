@@ -1,0 +1,24 @@
+﻿@model StoreViewModel
+@{
+    ViewData["Title"] = "Cart Items";
+} 
+    <div class="panel panel-default cart-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Quantity</td>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+       @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Quantity</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+    </table>
+</div>
